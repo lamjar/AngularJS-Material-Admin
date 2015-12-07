@@ -1,0 +1,45 @@
+<md-content>
+
+    <md-button ui-sref="articleNew" class="md-accent md-fab md-fab-top-right">
+        Add
+    </md-button>
+
+    <md-list>
+        <md-subheader class="md-no-sticky">Last article</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="article in articles" ng-click="goToArticle(article.id)">
+            <img ng-src="{{article.face}}" class="md-avatar"  />
+            <div class="md-list-item-text" layout="column">
+                <h3>{{ article.title }}</h3>
+                <h4>{{ article.notes }}</h4>
+
+                <p>{{ article.author }}</p>
+            </div>
+        </md-list-item>
+    </md-list>
+
+    <md-list>
+        <md-subheader class="md-no-sticky">Top 3</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="article in articles" ng-click="goToArticle()">
+            <img ng-src="{{article.face}}" class="md-avatar"  />
+            <div class="md-list-item-text" layout="column">
+                <h3>{{ article.title }}</h3>
+                <h4>{{ article.notes }}</h4>
+
+                <p>{{ article.author }}</p>
+            </div>
+        </md-list-item>
+    </md-list>
+
+    <md-list>
+        <md-subheader class="md-no-sticky">Archive</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="article in articles" ng-click="goToArticle()">
+            <img ng-src="{{article.face}}" class="md-avatar"  />
+            <div class="md-list-item-text" layout="column">
+                <h3>{{ article.title }}</h3>
+                <h4>{{ article.notes }}</h4>
+
+                <p>{{ article.author }}</p>
+            </div>
+        </md-list-item>
+    </md-list>
+</md-content>

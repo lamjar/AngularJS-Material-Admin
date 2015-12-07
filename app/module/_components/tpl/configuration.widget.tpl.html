@@ -1,0 +1,20 @@
+<md-list ng-cloak>
+
+    <md-subheader class="md-no-sticky">Spring Boot Applications</md-subheader>
+
+    <md-list-item ng-repeat="app in springBootApps">
+        <p> {{ app.name }} </p>
+        <md-checkbox class="md-accent" ng-model="app.wanted"></md-checkbox>
+    </md-list-item>
+
+    <md-divider></md-divider>
+
+    <md-subheader class="md-no-sticky">Schedule tasks</md-subheader>
+
+    <md-list-item  ng-repeat="setting in settings">
+        <md-icon md-svg-icon="{{setting.icon}}"></md-icon>
+        <p> {{ setting.name }} </p>
+        <md-switch class="md-accent" ng-model="setting.enabled"></md-switch>
+    </md-list-item>
+
+</md-list>

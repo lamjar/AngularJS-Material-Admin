@@ -1,0 +1,110 @@
+<md-content>
+
+    <md-subheader class="md-no-sticky">{{title}}</md-subheader>
+
+
+    <md-tabs md-dynamic-height md-border-bottom>
+
+        <md-tab label="Required">
+            <md-content class="md-padding">
+                <div ng-include src="'article-form.html'"></div>
+
+                <md-button ui-sref="articleNe" class="md-raised md-accent">
+                    Save
+                </md-button>
+
+            </md-content>
+        </md-tab>
+
+        <md-tab label="Other">
+            <md-content class="md-padding">
+                <div ng-include src="'article-other.html'"></div>
+
+                <md-button ui-sref="articleNe" class="md-raised md-accent">
+                    Save
+                </md-button>
+
+            </md-content>
+        </md-tab>
+
+    </md-tabs>
+</md-content>
+
+
+<script type="text/ng-template" id="article-form.html">
+    <div layout="column" ng-cloak class="md-inline-form">
+
+        <md-content layout-padding>
+
+            <form>
+                <md-input-container>
+                    <label>Title</label>
+                    <input ng-model="article.title">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Subtitle</label>
+                    <input ng-model="article.subtitle">
+                </md-input-container>
+            </form>
+
+        </md-content>
+
+        <md-content layout-padding layout="row" layout-sm="column">
+
+            <md-input-container>
+                <label>Author</label>
+                <input ng-model="article.author">
+            </md-input-container>
+
+        </md-content>
+
+        <md-content layout-padding>
+
+            <md-input-container>
+                <label>Content</label>
+                <textarea  ng-model="article.content"></textarea>
+            </md-input-container>
+
+        </md-content>
+
+    </div>
+</script>
+
+<script type="text/ng-template" id="article-other.html">
+    <div layout="column" ng-cloak class="md-inline-form">
+
+        <!--<md-content layout-padding layout="row" layout-sm="column">-->
+            <!--<md-datepicker ng-model="article.data" md-placeholder="Enter date"></md-datepicker>-->
+        <!--</md-content>-->
+
+        <md-content layout-padding layout="row" layout-sm="column">
+
+            <md-input-container flex>
+                <label>Type (Disabled)</label>
+                <input ng-model="article.type" disabled>
+            </md-input-container>
+
+
+            <md-input-container flex>
+                <label>State</label>
+                <md-select ng-model="article.state">
+                    <md-option ng-repeat="state in states" value="{{state.id}}">
+                        {{state.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+
+        </md-content>
+
+        <md-content layout-padding>
+
+            <md-input-container class="md-block">
+                <label>Short version</label>
+                <textarea ng-model="article.short" columns="1" md-maxlength="150" rows="5"></textarea>
+            </md-input-container>
+
+        </md-content>
+    </div>
+</script>
